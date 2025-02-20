@@ -79,7 +79,7 @@ const skills = [
         icon: DiMysql,
         color: "from-[#FF4D4D] to-[#F9CB28]",
         description: "İlişkisel ve NoSQL veritabanı yönetimi",
-        technologies: ["MySQL", "MongoDB", "MSSQL", "MongoDB"],
+        technologies: ["MySQL", "MongoDB", "MSSQL"],
         features: [
             "Veritabanı Tasarımı",
             "Query Optimizasyonu",
