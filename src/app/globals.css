@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 10, 10, 10;
+        --background-end-rgb: 0, 0, 0;
+    }
+
+    body {
+        color: rgb(var(--foreground-rgb));
+        background: linear-gradient(to bottom,
+                rgb(var(--background-start-rgb)),
+                rgb(var(--background-end-rgb)));
+        min-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gradient-text {
+        @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+    }
+
+    .glass {
+        @apply bg-white/10 backdrop-blur-lg;
+    }
+}
+
+@layer utilities {
+    .hover-scale {
+        @apply transition-transform duration-300 hover:scale-105;
+    }
+
+    .hover-lift {
+        @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    }
+
+    .perspective {
+        perspective: 1000px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #4a4a4a;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #6d28d9;
+    }
+
+    .snap-container {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+    }
+
+    .snap-section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+}
